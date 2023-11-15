@@ -1,4 +1,6 @@
+
 export default function About() {
+
   return (
     <section className="bg-black text-white">
       <div className="mx-auto w-[90%] max-w-5xl flex flex-col gap-4 py-8">

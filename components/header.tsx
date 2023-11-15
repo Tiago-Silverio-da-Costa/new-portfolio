@@ -1,4 +1,7 @@
+"use client";
+
 import localFont from 'next/font/local'
+import { useState } from 'react';
 
 const Helvetica = localFont({
   src: [
@@ -16,31 +19,25 @@ const Helvetica = localFont({
 });
 
 export default function Header() {
+  const [lang, setLang] = useState("en");
 
   return (
     <header className="bg-black text-white">
       <div className="mx-auto w-[90%] max-w-5xl flex items-center justify-end py-8">
-        {/* <h1 className={`${Helvetica.className} uppercase font-bold text-xl`}>Tiago S. C.</h1> */}
-        <div className="flex items-center justify-center flex-row flex-wrap w-fit gap-2">
-          <a
-            href="#sobremim"
-            className="py-2 font-semibold text-xs md:text-sm hover:opacity-50 transition-all duration-300"
-          >
-            About me
-          </a>
-          <a
-            href="#habilidades"
-            className="py-2 font-semibold text-xs md:text-sm hover:opacity-50 transition-all duration-300"
-          >
-            Skills
-          </a>
-          <a
-            href="#educacao"
-            className="py-2 font-semibold text-xs md:text-sm hover:opacity-50 transition-all duration-300"
-          >
-            Education
-          </a>
+        <div className="flex items-center space-x-4">
 
+          <button
+            className="font-bold text-xl"
+            onClick={() => {
+              if (lang === "en") {
+                setLang("pt_br");
+              } else {
+                setLang("en");
+              }
+            }}
+          >
+            {lang}
+          </button>
         </div>
       </div>
     </header>

@@ -7,6 +7,7 @@ function Content() {
 
   return (
     <>
+      {/* <Header /> */}
       <Hero /> 
       <About />
       <Skills />
